@@ -32,12 +32,14 @@ overflow: hidden;
     flex-flow: row wrap;
     justify-content: space-evenly;
     align-content: center;
-    /* left:-1000px;
-    top: -100px;
-    z-index: 1;
-    position:absolute; */
+    position: relative;
+    left: 0%;
+    top: 0%;
+}
 
-    
+.extraSwag {
+    position: relative;
+    left: -1000%;
 }
 
 .img {
@@ -82,9 +84,6 @@ overflow: hidden;
 
 
 #logo {
-    /* width: 15%; */
-    /* height: 20%;  */
-    /* border: solid 3px purple; */
     box-sizing: border-box;
     padding: 20px 30px;
 }
@@ -143,11 +142,6 @@ nav {
 
 
 #summary {
-    /* height:20%; */
-    /* border: solid 3px blue; */
-    /* width: calc(100vh-176px); */
-    /* box-sizing: border-box; */
-    /* overflow: hidden; */
     align-items: center;
     display:flex;
     flex-flow: row nowrap;
@@ -157,8 +151,6 @@ nav {
 
 #displayClear {
     /* border: solid 3px white; */
-    /* height: 75%; */
-    /* width: 100vw; */
     box-sizing: border-box;
     font-size: 3rem;
     /* background-color: rgba(202, 211, 200,.3); */
