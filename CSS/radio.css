@@ -18,6 +18,7 @@ position: relative;
 display: inline-block;
 box-sizing: border-box; 
 overflow: hidden;
+margin: 10px 0px;
 }
 
 
@@ -59,7 +60,6 @@ overflow: hidden;
 .img {
     height: 200px;
     width: 350px;
-    margin: 10px 0px;
     object-fit: cover;
     /* margin: 10px;  */
 
@@ -77,6 +77,30 @@ overflow: hidden;
     font-size: 1.1rem;
 }
    
+.overtext {
+    position: absolute;
+    top: 0;
+    left:0; 
+    height: 200px;
+    width: 100%;
+    opacity:0;
+    transition: .8s ease;
+    padding: 5px;
+    box-sizing: border-box;
+}
+
+.labelinfo:hover .overtext{
+    opacity:1;
+    background-color:rgba(109, 33, 79,1);
+}
+
+.wordStyle {
+    position: absolute;
+    text-align: center;
+    padding:5px;
+    top: 10%;
+
+}
 
 
 #container {
