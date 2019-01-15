@@ -12,12 +12,26 @@ body {
     padding-left: 0;
 }
 
+#extra {
+    max-width: 400px;
+    min-width: 400px;
+    position: relative;
+    top:0%;
+    left: 0%;
+    z-index: 10000;
+    overflow-x: hidden;
+    overflow-y: scroll;
+    height: auto;
+}
+
 .labelinfo {
 position: relative;
 /* border: solid 3px green;  */
 display: inline-block;
 box-sizing: border-box; 
-overflow: hidden;
+top:50%;
+left:0%;
+/* overflow: hidden; */
 margin: 10px 0px;
 }
 
@@ -27,6 +41,7 @@ margin: 10px 0px;
     transform: scale(2, 2) translateX(50px);
     clip-path: polygon(10.75% 25%, 60.75% 25%, 60.75% 75%,/*50% 50%,remove this 50% 50% to make it a square, keep it in for a jagged shape*/ 10.75% 75%);
 }
+
 
 .extra1 {
     display: none;
@@ -39,7 +54,7 @@ margin: 10px 0px;
 }
 
 .extra2 {
-    background-color: rgba(255, 255, 0, 1);
+    background-color: rgba(255, 255, 0, .9);
     display: flex;
     /* display:flex;  swap this for display: none, none isnt good for screenreaders 
     but display:flex + left:-1000 moves the item off screen but it occupies the space */
@@ -49,10 +64,89 @@ margin: 10px 0px;
     position: relative;
     box-sizing: border-box;
     left: 0%;
-    top: 0%;
-    overflow: scroll;
+    top: 50%;
 }
 
+
+
+.tableStyle {
+    color: black;
+    font-size: 1.5rem;
+    padding: 10px;
+    background-color: rgba(255, 255, 0, .9);
+    display: flex;
+    /* display:flex;  swap this for display: none, none isnt good for screenreaders 
+    but display:flex + left:-1000 moves the item off screen but it occupies the space */
+    flex-flow: row wrap;
+    justify-content: space-evenly;
+    align-content: center;
+    position: relative;
+    box-sizing: border-box;
+    left: 0%;
+    align-items: center;
+  
+    top: 0%;
+  
+}
+
+.tableStyle td {
+    padding: 10px 30px;
+    min-width: 150px;
+    /* border: solid 3px rgb(82, 65, 65); */
+}
+
+table {
+    border-collapse: collapse;
+}
+
+tr:hover {
+    background-color: rgb(223, 223, 223);
+}
+
+tr:nth-child(even) {
+    color: white;
+    background: #CCC;
+}
+tr:nth-child(odd) {
+    background: #FFF;
+    color:rgba(109, 33, 79,1);
+}
+
+/* .scrollbar
+{
+	margin-left: 30px;
+	float: left;
+	height: 300px;
+	width: 65px;
+	background: #F5F5F5;
+	overflow-y: scroll;
+	margin-bottom: 25px;
+}
+
+.inside
+{
+	min-height: 450px;
+}
+
+.extra2::-webkit-scrollbar-track
+{
+	-webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.3);
+	border-radius: 10px;
+	background-color: #F5F5F5;
+}
+
+.extra2::-webkit-scrollbar
+{
+	width: 12px;
+	background-color: #F5F5F5;
+}
+
+.extra2::-webkit-scrollbar-thumb
+{
+	border-radius: 10px;
+	-webkit-box-shadow: inset 0 0 6px rgba(0,0,0,.3);
+	background-color: rgba(31, 9, 22, 0.8);
+} */
 
 
 .img {
@@ -447,47 +541,30 @@ section {
         max-width: 189px;
     }
 
-    #playLive {
-        /* border: solid 3px red; */
-    } 
-}
+
     #Tagline {
         font-size: 1.3rem;
     }
-    /* #summary {
+}
+
+/*this media query needs to be based on column size as well as screen size 
+as when the screen is big but column is reduced this doesnt take effect 
+as flexbox makes it more malleable giving it more flexibility before it has to go small.
+@media (max-width:482px){
+    #currentInfo {
         display: flex;
-        flex-flow: column nowrap;
-        flex-grow: 0;
-        align-items: flex-end;
-    } */
-
-    /* #Tagline, #currentInfo, #playLive {
-        padding: 0;
-        margin: 0;
-    } 
-
-    section {
-        flex: display;
-        flex-flow: column nowrap;
-        flex: 1 0 auto;
+        flex-flow:row wrap;
+        max-width: 189px;
     }
-    #Tagline {
-        text-align:left;
-    } */
 
-    
-
-    /* #summary {
-        align-items: center;
-        display:flex;
-        flex-flow: column nowrap;
-        padding: 0;
-        margin: 0;
-        
+    #currentInfo li {
+        font-size: .5rem;
     }
-    #currentInfo li:nth-child(3) {
+}
+
+    /* #currentInfo li:nth-child(3) {
         display:none;
-    } */
+    }  */
 
     /* is the same as  */
 
