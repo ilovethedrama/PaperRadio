@@ -7,11 +7,28 @@ body {
     font-family: 'Staatliches', cursive;
 }
 
+#container {
+    display: flex;
+    flex-flow: row nowrap;
+    height: 100vh;
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    box-sizing: border-box;
+    background-size: cover; 
+    /*photo backup for the video*/
+    /* background-image: url("https://media.giphy.com/media/fMYhlRdVtRnsk/giphy.gif"); */
+    /* background-repeat: no-repeat; Do not repeat the image */
+    background-color:rgba(109, 33, 79,.2);
+}
+
  ul {
     list-style: none;
     padding-left: 0;
 }
 
+/* Pop Out Menu Styling */
+/* Pop Out Menu */
 #extra {
     max-width: 400px;
     min-width: 400px;
@@ -21,29 +38,11 @@ body {
     z-index: 10000;
     overflow-x: hidden;
     overflow-y: scroll;
-    height: auto;
+    /* height: auto; */
 }
-
-.labelinfo {
-position: relative;
-display: inline-block;
-box-sizing: border-box; 
-top:50%;
-left:0%;
-margin: 10px 0px;
-}
-
-
-.adjust {
-    object-position: 0% 30%;
-    transform: scale(2, 2) translateX(50px);
-    clip-path: polygon(10.75% 25%, 60.75% 25%, 60.75% 75%,/*50% 50%,remove this 50% 50% to make it a square, keep it in for a jagged shape*/ 10.75% 75%);
-}
-
 
 .extra1 {
     display: none;
-
     /* this is better for a screen reader but the layout space 
     is still reserved even though not on page hmmm...
     
@@ -65,31 +64,111 @@ margin: 10px 0px;
     top: 50%;
 }
 
+/* Pop Out Label Item Styling */
+
+
+.labelinfo {
+    position: relative;
+    display: inline-block;
+    box-sizing: border-box; 
+    top:65%;
+    left:0%;
+    margin: 10px 0px;
+}
+
+.labelinfo:hover .overtext{
+    opacity:1;
+    background-color:rgba(109, 33, 79,1);
+}
+
+.overtext {
+    position: absolute;
+    top: 0;
+    left:0; 
+    height: 200px;
+    width: 100%;
+    opacity:0;
+    transition: .8s ease;
+    padding: 5px;
+    box-sizing: border-box;
+}
+
+.wordStyle {
+    position: absolute;
+    text-align: center;
+    padding:5px;
+    top: 10%;
+}
+
+.djTitle {
+    text-align: center;
+    color: white;
+    background-color: rgba(0, 0, 0, 0.3);
+    position: absolute;
+    top: 68%;
+    left: 0%;
+    width: 100%;
+    padding: 7px 0px;
+    font-size: 1.1rem;
+}
+
+/* POP OUT MENU HEAD DISPLAY */
+.popupHead {
+    display: flex;
+    flex-flow: row nowrap;
+    justify-content: space-between;
+    width: 100%;
+    margin-bottom: 30px;
+}
+
+.popupHead a {
+    align-self: flex-start;
+    /* color: rgba(109, 33, 79,1); */
+    color: rgba(0, 0, 0, 1);
+}
+
+/* Pop Up Label Image Adjustment */
+.adjust {
+    object-position: 0% 30%;
+    transform: scale(2, 2) translateX(50px);
+    clip-path: polygon(10.75% 25%, 60.75% 25%, 60.75% 75%,/*50% 50%,remove this 50% 50% to make it a square, keep it in for a jagged shape*/ 10.75% 75%);
+}
+
+.adjust2 {
+    object-position: 0% 20%;
+}
+
+.img {
+    height: 200px;
+    width: 350px;
+    object-fit: cover;
+}
+
+/* SCHEDULE POP OUT MENU */
 .tableStyle {
     color: black;
     font-size: 1.5rem;
     padding: 10px;
     background-color: rgba(255, 255, 0, .9);
     display: flex;
-    /* display:flex;  swap this for display: none, none isnt good for screenreaders 
-    but display:flex + left:-1000 moves the item off screen but it occupies the space */
-    flex-flow: row wrap;
-    justify-content: space-evenly;
+    flex-flow: column nowrap;
+    justify-content: space-between;
     align-content: center;
     position: relative;
     box-sizing: border-box;
     left: 0%;
     align-items: center;
     top: 0%;
+
+    /* display:flex;  swap this for display: none, none isnt good for screenreaders 
+    but display:flex + left:-1000 moves the item off screen but it occupies the space */
 }
 
-.tableStyle td {
-    padding: 10px 30px;
-    min-width: 150px;
-}
-
+/* TABLE */
 table {
     border-collapse: collapse;
+    text-align: center;
+    margin-bottom: 100px;
 }
 
 tr:hover {
@@ -105,76 +184,37 @@ tr:nth-child(odd) {
     color:rgba(109, 33, 79,1);
 }
 
-.img {
-    height: 200px;
-    width: 350px;
-    object-fit: cover;
-}
+.tableStyle td {
+    padding: 10px 30px;
+    min-width: 150px;
+} 
 
-.djTitle {
-    text-align: center;
+/* STYLING FOR LINKS */
+.linkStyle {
     color: white;
-    background-color: rgba(0, 0, 0, 0.3);
-    position: absolute;
-    top: 68%;
-    left: 0%;
-    width: 100%;
-    padding: 7px 0px;
-    font-size: 1.1rem;
-}
-   
-.overtext {
-    position: absolute;
-    top: 0;
-    left:0; 
-    height: 200px;
-    width: 100%;
-    opacity:0;
-    transition: .8s ease;
-    padding: 5px;
-    box-sizing: border-box;
+    text-decoration: none;
 }
 
-.labelinfo:hover .overtext{
-    opacity:1;
-    background-color:rgba(109, 33, 79,1);
+.linkStyle a {
+    color: white;
+    text-decoration: none;
 }
 
-.wordStyle {
-    position: absolute;
-    text-align: center;
-    padding:5px;
-    top: 10%;
-}
-
-
-#container {
+/* NAVBAR STYLING */
+nav {
     display: flex;
-    flex-flow: row nowrap;
-    height: 100vh;
-    position: absolute;
-    width: 100%;
-    height: 100%;
-    box-sizing: border-box;
-    background-size: cover; 
-    /*photo backup for the video*/
-    /* background-image: url("https://media.giphy.com/media/fMYhlRdVtRnsk/giphy.gif"); */
-    /* background-repeat: no-repeat; Do not repeat the image */
-    background-color:rgba(109, 33, 79,.2);
+    flex-flow: column nowrap;
+    justify-content: space-between;
+    flex: 0 1 auto;
+    background-color: rgba(111, 30, 81,.5);
 }
 
-
-#logo {
-    box-sizing: border-box;
-    padding: 20px 30px;
-}
-
+/* MAIN PORTION NAV BAR */
 #mainMenu {
     font-size: 1.5rem;
     text-align: right;
     box-sizing: border-box;
 }
-
 
 #mainMenu li a {
     padding-right: 15px;
@@ -186,29 +226,13 @@ tr:nth-child(odd) {
     margin-bottom: 5px; 
 }
 
-.linkStyle {
-    color: white;
-    text-decoration: none;
+/* LOGO STYLING */
+#logo {
+    box-sizing: border-box;
+    padding: 20px 30px;
 }
 
-.linkStyle a {
-    color: white;
-    text-decoration: none;
-}
-
-#logoTitle {
-    font-size: .6rem;
-}
-nav 
-{
-    display: flex;
-    flex-flow: column nowrap;
-    justify-content: space-between;
-    flex: 0 1 auto;
-    background-color: rgba(111, 30, 81,.5);
-}
-
-
+/* SOCIAL MEDIA PORTION NAVBAR  */
 #socialMenu {
     display:flex;
     flex-flow: row nowrap;
@@ -225,6 +249,18 @@ nav
     padding-right: 20px;
 }
 
+#socialMenu a:hover {
+    color: yellow;
+    transition: .8s background-color;
+}
+
+/* MAIN CONTENT SECTION */
+section {
+    display:flex;
+    flex-flow: column nowrap;
+    justify-content: space-between;
+    flex: 1 1 auto;
+}
 
 #summary {
     align-items: center;
@@ -277,7 +313,6 @@ nav
     padding-right: 5px;
     animation:pulse 1s ease-in 0s infinite;
 }
-  
 
 #mainMenu li a:hover {
     color: yellow;
@@ -290,12 +325,6 @@ nav
     background-color:rgba(31, 9, 22, 0.8);
    
 } 
-
-#socialMenu a:hover {
-    color: yellow;
-    transition: .8s background-color;
-}
-
 
 #currentInfo {
  letter-spacing: .1rem;
@@ -314,13 +343,7 @@ nav
     text-align: center; 
 }
 
-section {
-    display:flex;
-    flex-flow: column nowrap;
-    justify-content: space-between;
-    flex: 1 1 auto;
-}
-
+/* MUTE BUTTON  */
 #silence {
     font-size: 2rem;
     padding: 25px;
@@ -335,7 +358,6 @@ section {
     color: yellow;
 }
 
-
 #silence a:hover {
    transition: all .8s;
     opacity: .3;
@@ -344,8 +366,9 @@ section {
 
 .strikethru {
     background: linear-gradient(to left top, transparent 47.75%, currentColor 49.5%, currentColor 50.5%, transparent 52.25%);
-  }
+}
 
+/* MEDIA QUERIES */
 @keyframes pulse {
     0% {
         opacity: 1;
@@ -437,8 +460,6 @@ section {
     word-wrap: break-word;
     }   
 }
-
-
 
 @media (max-width:995px){
 
